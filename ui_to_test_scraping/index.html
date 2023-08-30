@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Scraper Testing</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 25px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-right: 10px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .examples {
+      margin-bottom: 20px;
+    }
+    #responseDiv {
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <h1 class="header">Web Scraper Testing</h1>
+
+  <div class="examples">
+    <strong>Examples of webpages for quick scraping test : - </strong>
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/AWS_Lambda" target="_blank">https://en.wikipedia.org/wiki/AWS_Lambda</a></li>
+      <li><a href="https://www.w3schools.com/aws/aws_cloudessentials_awslambda.php" target="_blank">https://www.w3schools.com/aws/aws_cloudessentials_awslambda.php</a></li>
+    </ul>
+  </div>
+
+  <div class="input-container">
+    <label for="inputText">Enter URL : - </label>
+    <input type="text" id="inputText" placeholder="Mention the webpage you want to scrape">
+    <button id="submitButton">Submit</button>
+  </div>
+
+  <div id="responseDiv"></div>
+
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#submitButton').click(function() {
+      var inputValue = $('#inputText').val();
+      $.ajax({
+        url: 'https://ghfbnzjv5x4tawn6mj4wjtksgq0qstjn.lambda-url.us-east-2.on.aws/',
+        method: 'POST',
+        crossDomain: true,
+        data: JSON.stringify({ "url": inputValue }),
+        contentType: 'application/json',
+        success: function(response) {
+          $('#responseDiv').html('<strong>API Response:</strong><br>' + response["scraped_data"]);
+        },
+        error: function(error) {
+          $('#responseDiv').html('<strong>An error occurred:</strong><br>' + error.statusText);
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
