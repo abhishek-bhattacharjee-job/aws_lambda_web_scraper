@@ -1,4 +1,4 @@
-# lambda_web_scrapper
+# AWS lambda web scrapper
 This code is for web scrapping using AWS lambda
 
 ## Getting Started
