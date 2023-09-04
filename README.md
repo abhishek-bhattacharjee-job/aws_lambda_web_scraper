@@ -18,5 +18,5 @@ Then zip the directory - python and upload that to aws lambda layer
 
 ## Related Youtube videos
 ```bash
-https://www.youtube.com/watch?v=wgtxmoaOJEc&list=PLLeyTsu8BpD_zgFKIUsy2EOo1B2rMiAvd
+https://www.youtube.com/watch?v=Jjnr5Fu24b0&list=PLLeyTsu8BpD_zgFKIUsy2EOo1B2rMiAvd
 ```
