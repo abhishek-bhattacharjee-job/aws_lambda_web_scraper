@@ -1,5 +1,5 @@
-# AWS lambda web scrapper
-This code is for web scrapping using AWS lambda
+# AWS lambda web scraper
+This code is for web scraping using AWS lambda
 
 ## Getting Started
 Clone the repository to your local machine:
